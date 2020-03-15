@@ -1,0 +1,15 @@
+type Question {
+    id: ID!
+    question: String!
+    points: Int
+    author: Person!
+}
+
+extend type Query {
+    findAllQuestions: [Question]
+    findQuestion(id: Int): Question
+}
+
+extend type Mutation {
+    createQuestion(question: String!, authorID: Int!): Question
+}
